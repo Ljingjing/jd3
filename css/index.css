@@ -1,0 +1,301 @@
+/* 公共变量 */
+html {
+  font-size: 100px;
+}
+body {
+  font-size: 0.16rem;
+}
+/* 样式重置 */
+* {
+  margin: 0px;
+  padding: 0px;
+  /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+  box-sizing: border-box;
+  /* 去除移动端按住元素的时候会出现高亮背景色 */
+  -webkit-tap-highlight-color: transparent;
+  /* 去掉所有移动端内边框 */
+  outline: none;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+input {
+  border: 0;
+}
+img {
+  /* 解决图片底部3px的间隙 为了让图片的对齐方式和文本一致*/
+  vertical-align: middle;
+}
+i {
+  font-style: normal;
+}
+/* 公共样式 */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 公共的图标样式 */
+/* 属性选择器 匹配类名以icon-开头 或者 中间包含了空格icon-的元素 */
+[class^="icon-"],
+[class*=" icon-"] {
+  /* 公共的精灵图 */
+  background-image: url(../images/sprites.png);
+  /* 设置背景图的大小 图片要缩小一半来写 背景图就设置背景图大小 */
+  background-size: 2rem 2rem;
+  background-origin: content-box;
+  background-clip: content-box;
+}
+.border-left {
+  border-left: 0.01rem solid #ccc;
+}
+.border-right {
+  border-right: 0.01rem solid #ccc;
+}
+.border-top {
+  border-top: 0.01rem solid #ccc;
+}
+.border-bottom {
+  border-bottom: 0.01rem solid #ccc;
+}
+#footer {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  bottom: 0;
+  z-index: 999;
+  max-width: 7.5rem;
+}
+#footer > ul {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+#footer > ul > li {
+  flex: 1;
+}
+#footer > ul > li > a {
+  display: block;
+  text-align: center;
+}
+#footer > ul > li > a > img {
+  width: 0.65rem;
+  height: 0.5rem;
+}
+body {
+  max-width: 7.5rem;
+  margin: 0px auto;
+}
+#header {
+  width: 100%;
+  display: flex;
+  padding: 0.07rem 0.1rem;
+  position: fixed;
+  background-color: rgba(222, 24, 27, 0);
+  max-width: 7.5rem;
+  z-index: 999;
+}
+#header .icon-logo {
+  width: 0.58rem;
+  height: 0.23rem;
+  display: block;
+  background-position: 0 -1.1rem;
+  margin-top: 0.04rem;
+}
+#header form {
+  flex: 1;
+  margin-left: 0.1rem;
+  position: relative;
+}
+#header form > input {
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  padding-left: 0.3rem;
+}
+#header form > .icon-search {
+  position: absolute;
+  width: 0.2rem;
+  height: 0.2rem;
+  background-position: -0.6rem -1.1rem;
+  top: 0.06rem;
+  left: 0.05rem;
+}
+#header .login {
+  width: 0.6rem;
+  text-align: center;
+  line-height: 0.3rem;
+  color: #fff;
+}
+#slide img {
+  width: 100%;
+}
+#slide .swiper-pagination .swiper-pagination-bullet {
+  width: 0.08rem;
+  height: 0.08rem;
+  background-color: transparent;
+  border: 0.01rem solid #fff;
+  box-sizing: border-box;
+}
+#slide .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fff;
+}
+#nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.1rem;
+}
+#nav ul > li {
+  width: 25%;
+}
+#nav ul > li > a {
+  display: block;
+  text-align: center;
+}
+#nav ul > li > a > img {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+#nav ul > li > a > p {
+  font-size: 0.14rem;
+  line-height: 0.3rem;
+}
+#main {
+  background-color: #f5f5f5;
+  padding: 0.1rem;
+  margin-bottom: 0.6rem;
+}
+#main .seckill {
+  background-color: #fff;
+  box-shadow: 0px 0px 0.01rem #ccc;
+}
+#main .seckill .title {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  position: relative;
+  line-height: 0.3rem;
+}
+#main .seckill .title .naozhong {
+  width: 0.2rem;
+  height: 0.25rem;
+  margin-left: 0.05rem;
+  margin-top: 0.02rem;
+}
+#main .seckill .title .name {
+  margin-left: 0.1rem;
+  font-size: 0.14rem;
+  color: #e93b3d;
+}
+#main .seckill .title .down-time {
+  margin-left: 0.1rem;
+}
+#main .seckill .title .down-time > span {
+  background-color: #000;
+  color: #fff;
+  display: inline-block;
+  width: 0.15rem;
+  height: 0.15rem;
+  line-height: 0.15rem;
+  text-align: center;
+}
+#main .seckill .title .down-time > span:nth-child(3n) {
+  background-color: #fff;
+  color: #000;
+}
+#main .seckill .title .more {
+  position: absolute;
+  right: 0.1rem;
+  font-size: 0.14rem;
+}
+#main .seckill .content > ul {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+#main .seckill .content > ul > li {
+  flex: 1;
+}
+#main .seckill .content > ul > li + li {
+  border-left: 0.01rem solid #ccc;
+}
+#main .seckill .content > ul > li > a {
+  display: block;
+  text-align: center;
+}
+#main .seckill .content > ul > li > a > img {
+  width: 1.1rem;
+}
+#main .seckill .content > ul > li > a > p {
+  font-size: 0.12rem;
+}
+#main .seckill .content > ul > li > a > p:nth-of-type(1) {
+  color: #e93b3d;
+}
+#main .seckill .content > ul > li > a > p:nth-of-type(2) {
+  color: #ccc;
+}
+#main .jd-market {
+  margin-top: 0.1rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 0.01rem #ccc;
+}
+#main .jd-market .title {
+  border-bottom: 0.01rem solid #ccc;
+}
+#main .jd-market .title > h4 {
+  font-weight: normal;
+  padding-left: 0.3rem;
+  line-height: 0.3rem;
+  position: relative;
+}
+#main .jd-market .title > h4::before {
+  content: '';
+  width: 0.04rem;
+  height: 0.15rem;
+  background-color: #e93b3d;
+  position: absolute;
+  left: 0.15rem;
+  top: 0.07rem;
+}
+#main .jd-market .content {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+}
+#main .jd-market .content .left {
+  flex: 1;
+}
+#main .jd-market .content .left > a {
+  display: block;
+}
+#main .jd-market .content .left > a > img {
+  width: 100%;
+}
+#main .jd-market .content .right {
+  flex: 1;
+}
+#main .jd-market .content .right > a {
+  display: block;
+}
+#main .jd-market .content .right > a > img {
+  width: 100%;
+}

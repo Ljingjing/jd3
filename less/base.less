@@ -1,0 +1,120 @@
+/* 公共变量 */
+
+@main-color: #e93b3d;
+@border-color: #ccc;
+@a-color: #666;
+
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 0.16rem;
+}
+
+/* 样式重置 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /*在移动端设置盒模型border-box 为了防止元素加边框或者padding出现水平滚动条*/
+    box-sizing: border-box;
+    /* 去除移动端按住元素的时候会出现高亮背景色 */
+    -webkit-tap-highlight-color: transparent;
+    /* 去掉所有移动端内边框 */
+    outline: none;
+}
+
+a {
+    color: @a-color;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    border: 0;
+}
+
+img {
+    /* 解决图片底部3px的间隙 为了让图片的对齐方式和文本一致*/
+    vertical-align: middle;
+}
+
+i {
+    font-style: normal;
+}
+
+
+/* 公共样式 */
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/* 公共的图标样式 */
+/* 属性选择器 匹配类名以icon-开头 或者 中间包含了空格icon-的元素 */
+[class^="icon-"],
+[class*=" icon-"] {
+     /* 公共的精灵图 */
+    background-image: url(../images/sprites.png);
+    /* 设置背景图的大小 图片要缩小一半来写 背景图就设置背景图大小 */
+    background-size: 2rem 2rem;
+    background-origin: content-box;
+    background-clip: content-box;
+
+}
+
+
+.border-left{
+    border-left: 0.01rem solid @border-color;
+}
+.border-right{
+    border-right: 0.01rem solid @border-color;
+}
+.border-top{
+    border-top: 0.01rem solid @border-color;
+}
+.border-bottom{
+    border-bottom: 0.01rem solid @border-color;
+}
+
+// 底部区域
+#footer{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    bottom: 0;
+    z-index: 999;
+    max-width: 7.5rem;
+    >ul{
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        >li{
+            flex: 1;
+            >a{
+                display: block;
+                text-align: center;
+                >img{
+                    width: 0.65rem;
+                    height: 0.5rem;
+                }
+            }
+        }
+    }
+}
